@@ -66,6 +66,87 @@ int main(){
     // cout<<"SUM of array: "<<recursiveArraySum(arr, 0, size)<<endl;
   }
 
+  {
+    // 32 16 8 4 2 1
+
+
+    // 5: 101
+    // 3: 011
+    // OR:111
+    // AND:001
+    // XOR:110
+
+    // 7: 111
+    // 111 & 1 = 1 so odd
+    // 12: 1100 & 1 = 0 so even
+    // 25: 11001 & 1 = 1 so odd
+    // 40: 101000 & 1 = 0 so even
+
+    // int n = 13
+    // bit pos 3 2 1 0 (13 & (1 << 2))
+    // bits    1 1 0 1
+    // 1 << 2  0 1 0 0
+    // &       0 1 0 0 -> non zero
+    // so 2nd bit is set
+
+    // set a bit
+    // num | (1 << k)
+
+    // clear bit
+    // num & ~(1 << k)
+
+    // toggle a bit
+    // num ^ (1 << k)
+
+    // remove lowest set bit
+    // num & (num - 1)
+  }
+
+  {
+    int n = 10;
+    n = n | (1 << 0);
+    cout<<n<<endl;
+  }
+
+  {
+    int n = 15;
+    n = n & ~(1<<1);
+    cout<<n<<endl;
+  }
+
+  {
+    int n = 10;
+    n = n ^ (1 << 1);
+    cout<<n<<endl;
+  }
+
+  {
+    int n = 23, count=0;
+    while (n>0)
+    {
+      n=n & (n-1);
+      count++;
+    }
+    cout<<count<<endl;
+  }
+
+  {
+    int arr[] = {1, 2, 4, 6, 8, 12, 16, 20, 32};
+    int count = 0, size = sizeof(arr)/sizeof(arr[0]), i=0;
+    while (i<size)
+    {
+      if (arr[i]>0 && (arr[i] & (arr[i]-1)) == 0)
+      {
+        count++;
+        cout<<arr[i]<<" ";
+      }
+      i++;
+    }
+    cout<<endl;
+  }
+
+
+
   return 0;
 }
 
