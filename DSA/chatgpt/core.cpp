@@ -103,46 +103,46 @@ int main(){
   }
 
   {
-    int n = 10;
-    n = n | (1 << 0);
-    cout<<n<<endl;
+    // int n = 10;
+    // n = n | (1 << 0);
+    // cout<<n<<endl;
   }
 
   {
-    int n = 15;
-    n = n & ~(1<<1);
-    cout<<n<<endl;
+    // int n = 15;
+    // n = n & ~(1<<1);
+    // cout<<n<<endl;
   }
 
   {
-    int n = 10;
-    n = n ^ (1 << 1);
-    cout<<n<<endl;
+    // int n = 10;
+    // n = n ^ (1 << 1);
+    // cout<<n<<endl;
   }
 
   {
-    int n = 23, count=0;
-    while (n>0)
-    {
-      n=n & (n-1);
-      count++;
-    }
-    cout<<count<<endl;
+    // int n = 23, count=0;
+    // while (n>0)
+    // {
+    //   n=n & (n-1);
+    //   count++;
+    // }
+    // cout<<count<<endl;
   }
 
   {
-    int arr[] = {1, 2, 4, 6, 8, 12, 16, 20, 32};
-    int count = 0, size = sizeof(arr)/sizeof(arr[0]), i=0;
-    while (i<size)
-    {
-      if (arr[i]>0 && (arr[i] & (arr[i]-1)) == 0)
-      {
-        count++;
-        cout<<arr[i]<<" ";
-      }
-      i++;
-    }
-    cout<<endl;
+    // int arr[] = {1, 2, 4, 6, 8, 12, 16, 20, 32};
+    // int count = 0, size = sizeof(arr)/sizeof(arr[0]), i=0;
+    // while (i<size)
+    // {
+    //   if (arr[i]>0 && (arr[i] & (arr[i]-1)) == 0)
+    //   {
+    //     count++;
+    //     cout<<arr[i]<<" ";
+    //   }
+    //   i++;
+    // }
+    // cout<<endl;
   }
 
 
