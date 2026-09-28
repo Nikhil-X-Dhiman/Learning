@@ -1,0 +1,7 @@
+# Ignore all compiled executables with no extension
+*
+!*/
+!*.cpp
+!*.h
+!*.hpp
+!.gitignore
