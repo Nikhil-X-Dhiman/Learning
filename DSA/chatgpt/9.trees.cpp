@@ -21,6 +21,10 @@ void inOrderTraversal(TreeNode* node);
 void postOrderTraversal(TreeNode* node);
 vector<vector<int>> levelOrderTraversal(TreeNode* root);
 void traverse2vector(const vector<vector<int>> arr);
+int depthOfBinaryTree(TreeNode* root);
+int nodeCounting(TreeNode* root, int count=0);
+int leafNodeCounting(TreeNode* root);
+bool searchBinaryTree(TreeNode* root, int target);
 
 int main(){
 
@@ -48,6 +52,14 @@ int main(){
     postOrderTraversal(root);
     cout<<endl;
     levelOrderTraversal(root);
+    cout<<endl;
+    cout<<"Depth of Tree: "<<depthOfBinaryTree(root);
+    cout<<endl;
+    cout<<"Number of nodes in a Tree: "<<nodeCounting(root);
+    cout<<endl;
+    cout<<"Number of leaf nodes in a Tree: "<<leafNodeCounting(root);
+    cout<<endl;
+    cout<<"Searching in a Tree: "<<searchBinaryTree(root, 30);
     cout<<endl;
   }
 
@@ -125,4 +137,45 @@ vector<vector<int>> levelOrderTraversal(TreeNode* root){
   }
   traverse2vector(ans);
   return ans;
+}
+
+int depthOfBinaryTree(TreeNode* root){
+  if (root==nullptr)
+  {
+    return 0;
+  }
+  return 1+max(depthOfBinaryTree(root->left), depthOfBinaryTree(root->right));
+}
+
+int nodeCounting(TreeNode* root, int count){
+  if (root==nullptr)
+  {
+    return 0;
+  }
+  return 1+nodeCounting(root->left)+nodeCounting(root->right);
+}
+
+int leafNodeCounting(TreeNode* root){
+  if (root==nullptr)
+  {
+    return 0;
+  }
+  if (root->left==nullptr && root->right==nullptr)
+  {
+    return 1;
+  }
+  return leafNodeCounting(root->left) + leafNodeCounting(root->right);
+}
+
+bool searchBinaryTree(TreeNode* root, int target){
+  if (root==nullptr)
+  {
+    return false;
+  }
+  if (root->data==target)
+  {
+    return 1;
+  }
+  // short-circuit evaluation
+  return searchBinaryTree(root->left, target) || searchBinaryTree(root->right, target);
 }
